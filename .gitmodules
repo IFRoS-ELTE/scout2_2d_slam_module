@@ -1,3 +1,3 @@
 [submodule "src/direct_lidar_inertial_odometry"]
 	path = src/direct_lidar_inertial_odometry
-	url = git@github.com:vectr-ucla/direct_lidar_inertial_odometry.git
+	url = https://github.com/vectr-ucla/direct_lidar_inertial_odometry.git
