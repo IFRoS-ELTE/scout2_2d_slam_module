@@ -19,4 +19,4 @@ services:
     # The environment section defines environment variables that are passed to the container. DISPLAY is required for GUIs to work
     environment:
       - DISPLAY
-    # entrypoint: ["tail", "-f", "/dev/null"]
+    entrypoint: ["tail", "-f", "/dev/null"]
