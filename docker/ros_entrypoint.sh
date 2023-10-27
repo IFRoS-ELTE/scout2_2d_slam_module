@@ -2,7 +2,10 @@
 set -e
 source /root/.bashrc
 
-# setup ros2 environment
+# Add a delay to wait for the ros master to be ready
+sleep 2
+
+# setup ros environment
 source "/opt/ros/$ROS_DISTRO/setup.bash" --
 
 if [ ! -e "CONTAINER_INITIALIZED_PLACEHOLDER" ]; then
