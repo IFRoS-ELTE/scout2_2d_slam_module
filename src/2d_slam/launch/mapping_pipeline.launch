@@ -51,14 +51,14 @@
     <!-- Sets the z coordinate of the robot to fixed value to temporarily fix the drift in the odometry -->
     <node pkg="2d_slam" type="tf_fixer.py" name="z_coordinate_fixer_node" output="screen">
         <param name="original_frame_id" type="string" value="robot/base_link"/>
-        <param name="corrected_frame_id" type="string" value="robot/corrected_base_link"/>
+        <param name="corrected_frame_id" type="string" value="robot/base_link_fixed"/>
         <param name="z_translation" type="double" value="0.3"/>
     </node>
 
     <!-- Gmapping for 2D SLAM -->
     <node pkg="gmapping" type="slam_gmapping" name="gmapping_node">
         <remap from="scan" to="/repub/scan"/>
-        <param name="base_frame" value="robot/corrected_base_link"/>
+        <param name="base_frame" value="robot/base_link_fixed"/>
         <param name="odom_frame" value="robot/imu"/>
         <param name="map_frame" value="robot/odom"/>
         <param name="map_update_interval" value="0.5"/>
