@@ -7,6 +7,8 @@ The scout_2d_slam_module is used in the [ball_picking_project repository](https:
 **Created by:** <br>
 Kevin Schmidt: cbsx3q@inf.elte.hu
 
+---
+
 ## Requirements
 
 - Docker (engine)
@@ -31,3 +33,9 @@ cd ./scout2_2d_slam_module/docker && sudo docker compose up
 ### Stopping and re-launching
 
 To stop and close the nodes, simply use `CTRL+C`, this will stop all containers. You can use `sudo docker compose up` if you want to re-launch. If you, for some reason, want to remove the containers, you can do so with the `sudo docker compose down` command. This means that at the next startup using `sudo docker compose up`, the containers will be newly created and all the ros workspaces inside will have to be freshly built as well.
+
+## Submodules
+
+### [direct_lidar_inertial_odometry](https://github.com/vectr-ucla/direct_lidar_inertial_odometry)
+
+Repository used to calculate robot odometry based on LiDAR and and IMU data.
