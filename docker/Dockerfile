@@ -1,12 +1,11 @@
-# This is an auto generated Dockerfile for ros:ros-base
-# generated from docker_images_ros2/create_ros_image.Dockerfile.em
+# Use the official ROS image for Noetic with perception packages, based on Ubuntu Focal
 FROM ros:noetic-perception-focal
 
+# Set environment variables for ROS distribution and root directory
 ENV ROS_DISTRO=noetic
-
 ENV ROS_ROOT=/opt/ros/${ROS_DISTRO}
 
-# install tools, SW needed for GUI output and ROS dependencies
+# Install essential tools, software for GUI output, and ROS dependencies
 RUN apt-get update && apt-get install --no-install-recommends -y \
         build-essential \
         git \
@@ -26,24 +25,21 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
         libomp-dev \
         libpcl-dev \
         libeigen3-dev \
-    && apt-get clean \ 
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Source setup.bash of ROS2 humble
+# Source setup.bash of ROS in the default bashrc
 RUN echo "source /opt/ros/noetic/setup.bash" >> /root/.bashrc
-
-# RUN rosdep update && \
-#     rosdep install
 
 # Copy the ros_entrypoint.sh script from ros:ros-base
 COPY ros_entrypoint.sh /
 RUN chmod +x /ros_entrypoint.sh
 
-# Set the ros_entrypoint.sh script as the entry point
+# Set the ros_entrypoint.sh script as the entry point for the container
 ENTRYPOINT ["/ros_entrypoint.sh"]
 
-# Create a new workspace folder for ROS2
+# Create a new workspace folder within the container
 RUN mkdir -p /root/ros_ws/src
 
-# Set the new workspace folder as the working directory
+# Set the new workspace folder as the working directory within the container
 WORKDIR /root/ros_ws
