@@ -3,6 +3,9 @@
 This module enables the Silvanus robot to estimate its odometry using [Direct Lidar Inertial Odometry](https://github.com/vectr-ucla/direct_lidar_inertial_odometry) and execute SLAM using [GMapping](https://wiki.ros.org/gmapping). The module is completely containerized and can easily adapted to work with other robots because of Docker.
 
 The scout_2d_slam_module is used in the [ball_picking_project repository](https://github.com/IFRoS-ELTE/ball_picking_project).
+<br><br>
+**Created by:** <br>
+Kevin Schmidt: cbsx3q@inf.elte.hu
 
 ## Requirements
 
