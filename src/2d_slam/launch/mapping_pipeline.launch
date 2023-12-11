@@ -45,14 +45,14 @@
     <node pkg="2d_slam" type="lscan_republish.py" name="lscan_republish_node" output="screen">
         <param name="input_topic" type="string" value="/ptl/scan" />
         <param name="output_topic" type="string" value="/repub/scan" />
-        <param name="new_frame_id" type="string" value="robot/lidar"/>
+        <param name="new_frame_id" type="string" value="robot/base_link_fixed"/>
     </node>
 
     <!-- Sets the z coordinate of the robot to fixed value to temporarily fix the drift in the odometry -->
     <node pkg="2d_slam" type="tf_fixer.py" name="z_coordinate_fixer_node" output="screen">
         <param name="original_frame_id" type="string" value="robot/base_link"/>
         <param name="corrected_frame_id" type="string" value="robot/base_link_fixed"/>
-        <param name="z_translation" type="double" value="0.3"/>
+        <param name="z_translation" type="double" value="0.5"/>s
     </node>
 
     <!-- Gmapping for 2D SLAM -->
