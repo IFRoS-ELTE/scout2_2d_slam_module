@@ -61,7 +61,7 @@
         <param name="base_frame" value="robot/base_link_fixed"/>
         <param name="odom_frame" value="robot/imu"/>
         <param name="map_frame" value="robot/odom"/>
-        <param name="map_update_interval" value="0.5"/>
+        <param name="map_update_interval" value="1.0"/>
         <param name="linearUpdate" value="0.0"/>
         <param name="angularUpdate" value="0.0"/>
         <param name="transform_publish_period" value="0"/> <!--prevents gmapping from messing with the odom frame, here robot/imu-->
@@ -69,7 +69,8 @@
         <param name="ymin" value="-200.0"/>
         <param name="xmax" value="200.0"/>
         <param name="ymax" value="200.0"/>
-        <param name="delta" value="0.40"/>
+        <param name="delta" value="0.50"/>
+        <param name="maxUrange" value="50.0"/>
     </node>
 
 </launch>
