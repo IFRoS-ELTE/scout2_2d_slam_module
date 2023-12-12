@@ -21,7 +21,7 @@ Specific requirements and dependencies for the included ROS packages can be foun
 ### 1. Clone this repository recursively on the Scout2.0
 
 ```bash
-git clone --recurse-submodules https://github.com/IFRoS-ELTE/scout2_2d_slam_module
+git clone --recurse-submodules https://github.com/IFRoS-ELTE/scout2_2d_slam_module.git
 ```
 
 ### 2. Build and launch the containers
